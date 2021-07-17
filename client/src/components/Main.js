@@ -93,7 +93,8 @@ export default function Main({ id }) {
           <div className="absolute right-5 top-5">
             {sharedLink && (
               <a href={`http://localhost:3000/edit/${sharedLink}`}>
-                Use this shared link http://localhost:3000/edit/${sharedLink}
+                Use this shared link{' '}
+                {`http://localhost:3000/edit/${sharedLink}`}
               </a>
             )}
             <Button
