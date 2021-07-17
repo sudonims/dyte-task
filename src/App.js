@@ -5,6 +5,7 @@ import { createTheme, MuiThemeProvider } from '@material-ui/core';
 import FileContext from './components/FilesContext';
 import FileExplorer from './components/FileExplorer';
 import CodeEditor from './components/CodeEditor';
+import LivePreview from './components/LivePreview';
 
 const theme = createTheme({
   palette: {
@@ -47,7 +48,7 @@ function App() {
     setCurrFile(file);
   };
 
-  console.log(currFile);
+  // console.log(currFile);
 
   return (
     <MuiThemeProvider theme={theme}>
@@ -66,7 +67,9 @@ function App() {
           <div className="w-2/5 m-4">
             <CodeEditor />
           </div>
-          <div className="w-2/5 m-4">Live</div>
+          <div className="w-2/5 m-4">
+            <LivePreview />
+          </div>
         </div>
       </FileContext.Provider>
     </MuiThemeProvider>

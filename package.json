@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.1.10",
     "autoprefixer": "^9",
     "axios": "^0.21.1",
+    "jquery": "^3.6.0",
     "postcss": "^7",
     "prismjs": "^1.24.1",
     "react": "^17.0.2",
