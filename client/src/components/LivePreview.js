@@ -1,7 +1,7 @@
 import React from 'react';
 import FileContext from './FilesContext';
 import { Container } from '@material-ui/core';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 const getGeneratedPageURL = ({ html, css, js }) => {
   const getBlobURL = (code, type) => {
@@ -40,7 +40,7 @@ export default function LivePreview() {
     var frame = document.getElementById('live');
     frame.src = url;
 
-    var frame = $('iframe');
+    // var frame = $('iframe');
     // var contents = frame.contents();
     // var body = contents.find('body');
     // var head = contents.find('head');
