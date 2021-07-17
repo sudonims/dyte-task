@@ -19,3 +19,5 @@ In new terminal
 # Note
 
 pastebin API use for 24 hrs exceeded
+U can chek below URL for the feature
+http://localhost:3000/edit/tpxYYYCS-d1HbCxrU-Ltym2KKd
