@@ -59,8 +59,13 @@ export default function LivePreview() {
   }, [files]);
 
   return (
-    <Container>
-      <iframe title="live-preview" id="live"></iframe>
-    </Container>
+    <div className="h-full w-3/4">
+      <p className="text-white font-black text-3xl">Live Preview</p>
+      <iframe
+        style={{ height: '90%', width: '100%', backgroundColor: 'white' }}
+        title="live-preview"
+        id="live"
+      ></iframe>
+    </div>
   );
 }

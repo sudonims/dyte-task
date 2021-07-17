@@ -12,7 +12,7 @@ import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-html';
 import 'ace-builds/src-noconflict/mode-css';
 import 'ace-builds/src-noconflict/mode-javascript';
-import 'ace-builds/src-noconflict/theme-github';
+import 'ace-builds/src-noconflict/theme-clouds_midnight';
 
 export default function CodeEditor() {
   const { files, curr, addFileContent } = React.useContext(FileContext);
@@ -35,24 +35,16 @@ export default function CodeEditor() {
 
   console.log(mode);
   return (
-    // <Editor
-    //   value={data}
-    //   onValueChange={onValueChange}
-    //   highlight={(code) => highlight(code, languages.js)}
-    //   padding={10}
-    //   style={{
-    //     fontFamily: '"Fira code", "Fira Mono", monospace',
-    //     fontSize: 12,
-    //     backgroundColor: '#0a0a0a',
-    //     color: 'white',
-    //   }}
-    // />
-    <AceEditor
-      mode={mode}
-      theme="github"
-      value={data}
-      onChange={onValueChange}
-      showGutter
-    />
+    <>
+      <p className="text-white font-black text-3xl">Code Editor</p>
+      <AceEditor
+        height="90%"
+        mode={mode}
+        theme="clouds_midnight"
+        value={data}
+        onChange={onValueChange}
+        showGutter
+      />
+    </>
   );
 }

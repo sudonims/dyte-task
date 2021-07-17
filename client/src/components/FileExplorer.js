@@ -14,8 +14,10 @@ export default function FileExplorer() {
   return (
     <Container>
       <div className="flex flex-col">
+        <p className="text-white font-black text-3xl mb-4">File Explorer</p>
         <div>
           <TreeView
+            defaultExpanded={['0']}
             defaultCollapseIcon={<ChevronRightIcon />}
             defaultExpandIcon={<ExpandMoreIcon />}
             selected={selected}

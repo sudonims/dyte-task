@@ -1,11 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {
-  createTheme,
-  MuiThemeProvider,
-  Button,
-  ThemeProvider,
-} from '@material-ui/core';
+import { createTheme, MuiThemeProvider, Button } from '@material-ui/core';
 
 import FileContext from './FilesContext';
 import FileExplorer from './FileExplorer';
@@ -22,6 +17,7 @@ const theme = createTheme({
 
 export default function Main({ id }) {
   console.log(id);
+  const [sharedLink, setSharedLink] = React.useState(null);
   const [files, setFiles] = React.useState([
     {
       name: 'index.html',
@@ -77,7 +73,7 @@ export default function Main({ id }) {
       })
       .then((res) => res.data);
 
-    alert(res);
+    setSharedLink(res);
   };
 
   return (
@@ -90,8 +86,16 @@ export default function Main({ id }) {
           changeCurrentFile,
         }}
       >
-        <div className="flex flex-row h-screen p-8">
-          <div className="absolute right-0 top-0">
+        <div
+          style={{ backgroundColor: '#0a0a0a', color: 'white' }}
+          className="flex flex-row h-screen p-8"
+        >
+          <div className="absolute right-5 top-5">
+            {sharedLink && (
+              <a href={`http://localhost:3000/edit/${sharedLink}`}>
+                Use this shared link http://localhost:3000/edit/${sharedLink}
+              </a>
+            )}
             <Button
               variant="contained"
               color="primary"
@@ -100,13 +104,16 @@ export default function Main({ id }) {
               Share
             </Button>
           </div>
-          <div className="w-1/5 m-4">
+          <div style={{ borderRight: '2px solid white' }} className="w-1/5 m-4">
             <FileExplorer />
           </div>
-          <div className="w-2/5 m-4">
+          <div
+            style={{ borderRight: '2px solid white' }}
+            className="w-2/5 h-full m-4"
+          >
             <CodeEditor />
           </div>
-          <div className="w-2/5 m-4">
+          <div className="w-2/5 h-full m-4">
             <LivePreview />
           </div>
         </div>
